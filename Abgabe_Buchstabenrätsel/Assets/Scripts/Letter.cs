@@ -37,7 +37,7 @@ public class Letter : MonoBehaviour, IPointerDownHandler
         }
     }
 
-    private void InstantiateRandomLetter()
+    public void InstantiateRandomLetter()
     {
         if (isWrong)
         {

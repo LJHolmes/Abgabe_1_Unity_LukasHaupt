@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -8,15 +9,23 @@ public class PuzzleManager : MonoBehaviour
 {
     private SoundManager soundManager;
 
+    private GameObject winScreenPanel;
+
     private float startTime;
-    private float elapsedTime;
+    [SerializeField] private float elapsedTime;
+    [SerializeField] private float winTime;
+    [SerializeField] private float highScore = 10000;
 
-    private int RightLetterCount;
-    private int RightWordsCount;
+    [SerializeField] private int correctLetterCount = 0;
+    [SerializeField] private int corrrectWordsCount = 0;
 
-    public List<GameObject> letterList;
+    [SerializeField] private bool isWon = false;
 
-    public TMP_Text timerText;
+    public List<GameObject> LetterList;
+
+    public TMP_Text TimerText;
+    public TMP_Text WordsCount;
+    public TMP_Text HighScore;
 
     public Color CorrectColor;
     public Color WrongColor;
@@ -25,10 +34,13 @@ public class PuzzleManager : MonoBehaviour
     private void Start()
     {
         soundManager = GameObject.Find("Main Camera").GetComponent<SoundManager>();
+        winScreenPanel = GameObject.Find("WinScreen").transform.GetChild(0).gameObject;
 
         startTime = Time.time;
 
-        FindLetters();
+        FindLettersAddList();
+
+        highScore = PlayerPrefs.GetFloat("HighScore");
     }
 
     private void Update()
@@ -36,63 +48,101 @@ public class PuzzleManager : MonoBehaviour
         elapsedTime = Time.time - startTime;
 
         UpdateTimerText();
-    }
-
-    private void UpdateTimerText()
-    {
-        string formattedTime = elapsedTime.ToString("F2");
-
-        timerText.text = formattedTime;
-    }
-
-    private void FindLetters()
-    {
-        foreach (GameObject letters in GameObject.FindGameObjectsWithTag("Letters"))
-        {
-            letterList.Add(letters);
-        }
+        UpdateCorrectWordsCount();
     }
 
     public void WrongLetter()
     {
         soundManager.PlayWrongSound();
 
-        RightLetterCount = 0;
+        correctLetterCount = 0;
+        corrrectWordsCount = 0;
 
         Invoke("ChangeColorDelay", 0.5f);
     }
 
-    private void ChangeColorDelay()
-    {
-        foreach (GameObject letter in letterList)
-        {
-            letter.GetComponent<Image>().color = BaseColor;
-        }
-    }
-
     public void CorrectLetter()
     {
-        soundManager.PlayCorrectSound();
+        soundManager.PlayCorrectLetterSound();
 
-        RightLetterCount++;
+        correctLetterCount++;
 
-        if (RightLetterCount == 4)
+        if (correctLetterCount == 4)
         {
-            RightWordsCount++;
+            soundManager.PlayCorrectWordSound();
+            corrrectWordsCount++;
+            correctLetterCount = 0;
         }
 
-        if (RightWordsCount == 3)
+        if (corrrectWordsCount == 3)
         {
             Win();
         }
     }
 
-    private void Win()
+    private void UpdateTimerText()
     {
+        if (!isWon)
+        {
+            string formattedTime = elapsedTime.ToString("F2");
 
+            TimerText.text = formattedTime;
+        }
     }
 
-    public void Restart()
+    private void UpdateCorrectWordsCount()
+    {
+        WordsCount.text = corrrectWordsCount.ToString();
+    }
+
+    private void FindLettersAddList()
+    {
+        foreach (GameObject letters in GameObject.FindGameObjectsWithTag("Letters"))
+        {
+            LetterList.Add(letters);
+        }
+    }
+    private void ChangeColorDelay()
+    {
+        foreach (GameObject letter in LetterList)
+        {
+            letter.GetComponent<Image>().color = BaseColor;
+        }
+    }
+
+    private void Win()
+    {
+        soundManager.PlayWinLevelSound();
+
+        isWon = true;
+
+        winTime = elapsedTime;
+
+        winScreenPanel.SetActive(true);
+
+        if (winTime < highScore)
+        {
+            PlayerPrefs.SetFloat("HighScore", winTime);
+            HighScore.text = winTime.ToString();
+        }
+        else
+        {
+            HighScore.text = highScore.ToString();
+        }
+    }
+
+    public void ResetLetters()
+    {
+        foreach (GameObject letter in LetterList)
+        {
+            if (letter.GetComponent<Letter>().isWrong)
+            {
+                letter.GetComponent<Letter>().InstantiateRandomLetter();
+            }
+        }
+    }
+
+    public void RestartScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }

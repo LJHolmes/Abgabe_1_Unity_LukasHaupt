@@ -3,8 +3,10 @@ using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
-    public AudioSource CorrectSound;
+    public AudioSource CorrectLetterSound;
     public AudioSource WrongSound;
+    public AudioSource CorrectWordSound;
+    public AudioSource WinSound;
 
     public Color SoundOn;
     public Color SoundOff;
@@ -13,10 +15,10 @@ public class SoundManager : MonoBehaviour
 
     public void ToggleSound()
     {
-        CorrectSound.mute = !CorrectSound.mute;
+        CorrectLetterSound.mute = !CorrectLetterSound.mute;
         WrongSound.mute = !WrongSound.mute;
 
-        if (CorrectSound.mute)
+        if (CorrectLetterSound.mute)
         {
             SoundButton.image.color = SoundOff;
         }
@@ -26,13 +28,23 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public void PlayCorrectSound()
+    public void PlayCorrectLetterSound()
     {
-        CorrectSound.Play();
+        CorrectLetterSound.Play();
     }
 
     public void PlayWrongSound()
     {
         WrongSound.Play();
+    }
+
+    public void PlayCorrectWordSound()
+    {
+        CorrectWordSound.Play();
+    }
+
+    public void PlayWinLevelSound()
+    {
+        WinSound.Play();
     }
 }

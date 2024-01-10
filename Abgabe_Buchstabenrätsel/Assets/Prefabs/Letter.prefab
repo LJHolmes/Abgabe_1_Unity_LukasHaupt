@@ -146,7 +146,6 @@ GameObject:
   - component: {fileID: 8918313720287763796}
   - component: {fileID: 7003292333736588539}
   - component: {fileID: 1779835639875683690}
-  - component: {fileID: -2313654000243634852}
   m_Layer: 5
   m_Name: Letter
   m_TagString: Untagged
@@ -224,20 +223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a321d24ab00cf4f4eb1e191c23f62505, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-2313654000243634852
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8410876703815129558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 2
-    callback:
-      m_PersistentCalls:
-        m_Calls: []
+  isCorrect: 0
+  isWrong: 1
+  CorrectColor: {r: 0.47588208, g: 0.754717, b: 0.4734781, a: 1}
+  WrongColor: {r: 0.75686276, g: 0.50293595, b: 0.4745098, a: 1}

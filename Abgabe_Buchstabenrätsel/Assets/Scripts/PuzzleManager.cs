@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PuzzleManager : MonoBehaviour
 {
@@ -9,6 +8,8 @@ public class PuzzleManager : MonoBehaviour
 
     private float startTime;
     private float elapsedTime;
+
+
 
     void Start()
     {
@@ -27,5 +28,10 @@ public class PuzzleManager : MonoBehaviour
         string formattedTime = elapsedTime.ToString("F2");
 
         timerText.text = formattedTime;
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

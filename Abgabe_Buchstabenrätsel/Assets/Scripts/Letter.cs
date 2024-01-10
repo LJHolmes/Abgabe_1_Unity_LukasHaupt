@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Letter : MonoBehaviour, IPointerDownHandler
 {
-    private SoundManager soundManager;
+    private PuzzleManager puzzleManager;
 
     private TMP_Text letterValue;
 
@@ -17,7 +17,7 @@ public class Letter : MonoBehaviour, IPointerDownHandler
 
     void Start()
     {
-        soundManager = GameObject.Find("Main Camera").GetComponent<SoundManager>();
+        puzzleManager = GameObject.Find("PuzzleManager").GetComponent<PuzzleManager>();
         letterValue = gameObject.transform.GetChild(0).GetComponent<TMP_Text>();
 
         InstantiateRandomLetter();
@@ -27,13 +27,13 @@ public class Letter : MonoBehaviour, IPointerDownHandler
     {
         if (isWrong)
         {
-            soundManager.PlayWrongSound();
             gameObject.GetComponent<Image>().color = WrongColor;
+            puzzleManager.WrongLetter();
         }
         if (isCorrect)
         {
-            soundManager.PlayCorrectSound();
             gameObject.GetComponent<Image>().color = CorrectColor;
+            puzzleManager.CorrectLetter();
         }
     }
 

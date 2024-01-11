@@ -199,22 +199,22 @@ public class PuzzleManager : MonoBehaviour
 
     private void FindLettersAddList()
     {
-        foreach (GameObject letters in GameObject.FindGameObjectsWithTag("Letters"))
+        foreach (GameObject letter in GameObject.FindGameObjectsWithTag("Letters"))
         {
-            if (letters.GetComponent<Letter>().WordOne)
+            if (letter.GetComponent<Letter>().WordOne)
             {
                 wordOneLetterCount++;
             }
-            if (letters.GetComponent<Letter>().WordTwo)
+            if (letter.GetComponent<Letter>().WordTwo)
             {
                 wordTwoLetterCount++;
             }
-            if (letters.GetComponent<Letter>().WordThree)
+            if (letter.GetComponent<Letter>().WordThree)
             {
                 wordThreeLetterCount++;
             }
 
-            LetterList.Add(letters);
+            LetterList.Add(letter);
         }
     }
 

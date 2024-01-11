@@ -11,6 +11,11 @@ public class Letter : MonoBehaviour, IPointerDownHandler
 
     public bool isCorrect;
     public bool isWrong;
+    public bool WordOne;
+    public bool WordTwo;
+    public bool WordThree;
+
+    public bool CorrectPressed;
 
     public Color CorrectColor;
     public Color WrongColor;
@@ -25,6 +30,11 @@ public class Letter : MonoBehaviour, IPointerDownHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        if (CorrectPressed)
+        {
+            return;
+        }
+
         if (isWrong)
         {
             gameObject.GetComponent<Image>().color = WrongColor;
@@ -33,7 +43,7 @@ public class Letter : MonoBehaviour, IPointerDownHandler
         if (isCorrect)
         {
             gameObject.GetComponent<Image>().color = CorrectColor;
-            puzzleManager.CorrectLetter();
+            puzzleManager.CorrectLetter(gameObject);
         }
     }
 

@@ -16,8 +16,20 @@ public class PuzzleManager : MonoBehaviour
     [SerializeField] private float winTime;
     [SerializeField] private float highScore = 10000;
 
-    [SerializeField] private int correctLetterCount = 0;
     [SerializeField] private int corrrectWordsCount = 0;
+
+    private int correctLetterCountWordOne;
+    private int wordOneLetterCount;
+    private int correctLetterCountWordTwo;
+    private int wordTwoLetterCount;
+    private int correctLetterCountWordThree;
+    private int wordThreeLetterCount;
+
+    private int wordsToFind = 3;
+
+    private bool finishWordOne = false;
+    private bool finishWordTwo = false;
+    private bool finishWordThree = false;
 
     [SerializeField] private bool isWon = false;
 
@@ -55,28 +67,114 @@ public class PuzzleManager : MonoBehaviour
     {
         soundManager.PlayWrongSound();
 
-        correctLetterCount = 0;
-        corrrectWordsCount = 0;
+        ResetStats();
 
         Invoke("ChangeColorDelay", 0.5f);
     }
 
-    public void CorrectLetter()
+    public void CorrectLetter(GameObject Letter)
     {
-        soundManager.PlayCorrectLetterSound();
-
-        correctLetterCount++;
-
-        if (correctLetterCount == 4)
+        if (Letter.GetComponent<Letter>().WordOne)
         {
-            soundManager.PlayCorrectWordSound();
-            corrrectWordsCount++;
-            correctLetterCount = 0;
+            if (finishWordOne)
+            {
+                return;
+            }
+
+            if (correctLetterCountWordTwo > 0 || correctLetterCountWordThree > 0)
+            {
+                WrongLetter();
+                return;
+            }
+
+            soundManager.PlayCorrectLetterSound();
+            correctLetterCountWordOne++;
+
+            Letter.GetComponent<Letter>().CorrectPressed = true;
+
+            if (correctLetterCountWordOne == wordOneLetterCount)
+            {
+                soundManager.PlayCorrectWordSound();
+                corrrectWordsCount++;
+                correctLetterCountWordOne = 0;
+                finishWordOne = true;
+            }
         }
 
-        if (corrrectWordsCount == 3)
+        if (Letter.GetComponent<Letter>().WordTwo)
+        {
+            if (finishWordTwo)
+            {
+                return;
+            }
+
+            if (correctLetterCountWordOne > 0 || correctLetterCountWordThree > 0)
+            {
+                WrongLetter();
+                return;
+            }
+
+            soundManager.PlayCorrectLetterSound();
+            correctLetterCountWordTwo++;
+
+            Letter.GetComponent<Letter>().CorrectPressed = true;
+
+            if (correctLetterCountWordTwo == wordTwoLetterCount)
+            {
+                soundManager.PlayCorrectWordSound();
+                corrrectWordsCount++;
+                correctLetterCountWordTwo = 0;
+                finishWordTwo = true;
+            }
+        }
+
+        if (Letter.GetComponent<Letter>().WordThree)
+        {
+            if (finishWordThree)
+            {
+                return;
+            }
+
+            if (correctLetterCountWordOne > 0 || correctLetterCountWordTwo > 0)
+            {
+                WrongLetter();
+                return;
+            }
+
+            soundManager.PlayCorrectLetterSound();
+            correctLetterCountWordThree++;
+
+            Letter.GetComponent<Letter>().CorrectPressed = true;
+
+            if (correctLetterCountWordThree == wordThreeLetterCount)
+            {
+                soundManager.PlayCorrectWordSound();
+                corrrectWordsCount++;
+                correctLetterCountWordThree = 0;
+                finishWordThree = true;
+            }
+        }
+
+        if (corrrectWordsCount == wordsToFind)
         {
             Win();
+        }
+    }
+
+    private void ResetStats()
+    {
+        corrrectWordsCount = 0;
+        correctLetterCountWordOne = 0;
+        correctLetterCountWordTwo = 0;
+        correctLetterCountWordThree = 0;
+
+        finishWordOne = false;
+        finishWordTwo = false;
+        finishWordThree = false;
+
+        foreach (GameObject letter in GameObject.FindGameObjectsWithTag("Letters"))
+        {
+            letter.GetComponent<Letter>().CorrectPressed = false;
         }
     }
 
@@ -99,9 +197,23 @@ public class PuzzleManager : MonoBehaviour
     {
         foreach (GameObject letters in GameObject.FindGameObjectsWithTag("Letters"))
         {
+            if (letters.GetComponent<Letter>().WordOne)
+            {
+                wordOneLetterCount++;
+            }
+            if (letters.GetComponent<Letter>().WordTwo)
+            {
+                wordTwoLetterCount++;
+            }
+            if (letters.GetComponent<Letter>().WordThree)
+            {
+                wordThreeLetterCount++;
+            }
+
             LetterList.Add(letters);
         }
     }
+
     private void ChangeColorDelay()
     {
         foreach (GameObject letter in LetterList)

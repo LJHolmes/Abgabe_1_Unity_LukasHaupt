@@ -583,6 +583,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
         type: 3}
+      propertyPath: WordThree
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
+        type: 3}
       propertyPath: isCorrect
       value: 1
       objectReference: {fileID: 0}
@@ -2166,7 +2171,7 @@ MonoBehaviour:
   correctLetterCount: 0
   corrrectWordsCount: 0
   isWon: 0
-  letterList: []
+  LetterList: []
   TimerText: {fileID: 1741137228}
   WordsCount: {fileID: 1957625009}
   HighScore: {fileID: 2027030146}
@@ -2441,6 +2446,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
         type: 3}
+      propertyPath: WordThree
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
+        type: 3}
       propertyPath: isCorrect
       value: 1
       objectReference: {fileID: 0}
@@ -2704,6 +2714,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
         type: 3}
+      propertyPath: WordThree
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
+        type: 3}
       propertyPath: isCorrect
       value: 1
       objectReference: {fileID: 0}
@@ -2918,6 +2933,11 @@ PrefabInstance:
         type: 3}
       propertyPath: isWrong
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
+        type: 3}
+      propertyPath: WordThree
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
         type: 3}
@@ -3299,7 +3319,12 @@ PrefabInstance:
     - target: {fileID: 798087743764313620, guid: c86b8fc2dd0075f4688d69e395b09939,
         type: 3}
       propertyPath: m_text
-      value: R
+      value: T
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
+        type: 3}
+      propertyPath: WordTwo
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
         type: 3}
@@ -3825,6 +3850,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
         type: 3}
+      propertyPath: WordOne
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
+        type: 3}
       propertyPath: isWrong
       value: 0
       objectReference: {fileID: 0}
@@ -3964,6 +3994,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
         type: 3}
+      propertyPath: WordTwo
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
+        type: 3}
       propertyPath: isWrong
       value: 0
       objectReference: {fileID: 0}
@@ -4096,21 +4131,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1360886142}
     m_Modifications:
-    - target: {fileID: 798087743764313620, guid: c86b8fc2dd0075f4688d69e395b09939,
-        type: 3}
-      propertyPath: m_text
-      value: G
-      objectReference: {fileID: 0}
-    - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
-        type: 3}
-      propertyPath: isWrong
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
-        type: 3}
-      propertyPath: isCorrect
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6115641598643332935, guid: c86b8fc2dd0075f4688d69e395b09939,
         type: 3}
       propertyPath: m_Pivot.x
@@ -4315,7 +4335,12 @@ PrefabInstance:
     - target: {fileID: 798087743764313620, guid: c86b8fc2dd0075f4688d69e395b09939,
         type: 3}
       propertyPath: m_text
-      value: I
+      value: O
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
+        type: 3}
+      propertyPath: WordTwo
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
         type: 3}
@@ -5273,11 +5298,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 147272664}
+  - {fileID: 1740353288}
   - {fileID: 210793093}
   - {fileID: 1360886142}
   - {fileID: 1887874237}
   - {fileID: 1643620578}
-  - {fileID: 1740353288}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -5297,6 +5322,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: L
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
+        type: 3}
+      propertyPath: WordOne
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
         type: 3}
@@ -6803,6 +6833,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
         type: 3}
+      propertyPath: WordOne
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
+        type: 3}
       propertyPath: isWrong
       value: 0
       objectReference: {fileID: 0}
@@ -7625,6 +7660,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: I
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
+        type: 3}
+      propertyPath: WordOne
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
         type: 3}

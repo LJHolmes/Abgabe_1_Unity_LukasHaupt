@@ -25,6 +25,7 @@ public class Letter : MonoBehaviour, IPointerDownHandler
         puzzleManager = GameObject.Find("PuzzleManager").GetComponent<PuzzleManager>();
         letterValue = gameObject.transform.GetChild(0).GetComponent<TMP_Text>();
 
+        // Random Buchstabe verteilen
         InstantiateRandomLetter();
     }
 
@@ -34,7 +35,6 @@ public class Letter : MonoBehaviour, IPointerDownHandler
         {
             return;
         }
-
         if (isWrong)
         {
             gameObject.GetComponent<Image>().color = WrongColor;
@@ -53,7 +53,7 @@ public class Letter : MonoBehaviour, IPointerDownHandler
         {
             int randomIndex = Random.Range(0, 26);
 
-            // Converting the index to a character
+            // Int zu Buchstaben
             char randomLetter = (char)('A' + randomIndex);
 
             letterValue.text = randomLetter.ToString();

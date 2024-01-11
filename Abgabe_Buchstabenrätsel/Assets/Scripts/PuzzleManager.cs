@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -16,7 +15,7 @@ public class PuzzleManager : MonoBehaviour
     [SerializeField] private float winTime;
     [SerializeField] private float highScore = 10000;
 
-    [SerializeField] private int corrrectWordsCount = 0;
+    [SerializeField] private int corrrectWordsCount;
 
     private int correctLetterCountWordOne;
     private int wordOneLetterCount;
@@ -27,9 +26,9 @@ public class PuzzleManager : MonoBehaviour
 
     private int wordsToFind = 3;
 
-    private bool finishWordOne = false;
-    private bool finishWordTwo = false;
-    private bool finishWordThree = false;
+    private bool isFinishWordOne = false;
+    private bool isFinishWordTwo = false;
+    private bool isFinishWordThree = false;
 
     [SerializeField] private bool isWon = false;
 
@@ -45,10 +44,10 @@ public class PuzzleManager : MonoBehaviour
 
     private void Start()
     {
+        startTime = Time.time;
+
         soundManager = GameObject.Find("Main Camera").GetComponent<SoundManager>();
         winScreenPanel = GameObject.Find("WinScreen").transform.GetChild(0).gameObject;
-
-        startTime = Time.time;
 
         FindLettersAddList();
 
@@ -67,16 +66,19 @@ public class PuzzleManager : MonoBehaviour
     {
         soundManager.PlayWrongSound();
 
+        // Alle Werte zurücksetzen
         ResetStats();
 
+        // Nach 0.5f Sekunden Farbe anpassen
         Invoke("ChangeColorDelay", 0.5f);
     }
 
     public void CorrectLetter(GameObject Letter)
     {
+        // Wenn Buchstabe vom Wort 1 ausgewählt wurde
         if (Letter.GetComponent<Letter>().WordOne)
         {
-            if (finishWordOne)
+            if (isFinishWordOne)
             {
                 return;
             }
@@ -97,13 +99,14 @@ public class PuzzleManager : MonoBehaviour
                 soundManager.PlayCorrectWordSound();
                 corrrectWordsCount++;
                 correctLetterCountWordOne = 0;
-                finishWordOne = true;
+                isFinishWordOne = true;
             }
         }
 
+        // Wenn Buchstabe vom Wort 2 ausgewählt wurde
         if (Letter.GetComponent<Letter>().WordTwo)
         {
-            if (finishWordTwo)
+            if (isFinishWordTwo)
             {
                 return;
             }
@@ -124,13 +127,14 @@ public class PuzzleManager : MonoBehaviour
                 soundManager.PlayCorrectWordSound();
                 corrrectWordsCount++;
                 correctLetterCountWordTwo = 0;
-                finishWordTwo = true;
+                isFinishWordTwo = true;
             }
         }
 
+        // Wenn Buchstabe vom Wort 3 ausgewählt wurde
         if (Letter.GetComponent<Letter>().WordThree)
         {
-            if (finishWordThree)
+            if (isFinishWordThree)
             {
                 return;
             }
@@ -151,7 +155,7 @@ public class PuzzleManager : MonoBehaviour
                 soundManager.PlayCorrectWordSound();
                 corrrectWordsCount++;
                 correctLetterCountWordThree = 0;
-                finishWordThree = true;
+                isFinishWordThree = true;
             }
         }
 
@@ -168,9 +172,9 @@ public class PuzzleManager : MonoBehaviour
         correctLetterCountWordTwo = 0;
         correctLetterCountWordThree = 0;
 
-        finishWordOne = false;
-        finishWordTwo = false;
-        finishWordThree = false;
+        isFinishWordOne = false;
+        isFinishWordTwo = false;
+        isFinishWordThree = false;
 
         foreach (GameObject letter in GameObject.FindGameObjectsWithTag("Letters"))
         {
@@ -243,7 +247,7 @@ public class PuzzleManager : MonoBehaviour
         }
     }
 
-    public void ResetLetters()
+    public void ResetLettersRandom()
     {
         foreach (GameObject letter in LetterList)
         {

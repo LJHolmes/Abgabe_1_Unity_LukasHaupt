@@ -578,8 +578,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
         type: 3}
+      propertyPath: IsWrong
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
+        type: 3}
       propertyPath: isWrong
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
+        type: 3}
+      propertyPath: IsCorrect
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
         type: 3}
@@ -2440,8 +2450,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
         type: 3}
+      propertyPath: IsWrong
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
+        type: 3}
       propertyPath: isWrong
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
+        type: 3}
+      propertyPath: IsCorrect
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
         type: 3}
@@ -2708,8 +2728,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
         type: 3}
+      propertyPath: IsWrong
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
+        type: 3}
       propertyPath: isWrong
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
+        type: 3}
+      propertyPath: IsCorrect
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
         type: 3}
@@ -2930,8 +2960,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
         type: 3}
+      propertyPath: IsWrong
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
+        type: 3}
       propertyPath: isWrong
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
+        type: 3}
+      propertyPath: IsCorrect
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
         type: 3}
@@ -3322,6 +3362,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
         type: 3}
+      propertyPath: IsWrong
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
+        type: 3}
       propertyPath: WordTwo
       value: 1
       objectReference: {fileID: 0}
@@ -3329,6 +3374,11 @@ PrefabInstance:
         type: 3}
       propertyPath: isWrong
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
+        type: 3}
+      propertyPath: IsCorrect
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
         type: 3}
@@ -3849,6 +3899,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
         type: 3}
+      propertyPath: IsWrong
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
+        type: 3}
       propertyPath: WordOne
       value: 1
       objectReference: {fileID: 0}
@@ -3856,6 +3911,11 @@ PrefabInstance:
         type: 3}
       propertyPath: isWrong
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
+        type: 3}
+      propertyPath: IsCorrect
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
         type: 3}
@@ -3993,6 +4053,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
         type: 3}
+      propertyPath: IsWrong
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
+        type: 3}
       propertyPath: WordTwo
       value: 1
       objectReference: {fileID: 0}
@@ -4000,6 +4065,11 @@ PrefabInstance:
         type: 3}
       propertyPath: isWrong
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
+        type: 3}
+      propertyPath: IsCorrect
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
         type: 3}
@@ -4338,6 +4408,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
         type: 3}
+      propertyPath: IsWrong
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
+        type: 3}
       propertyPath: WordTwo
       value: 1
       objectReference: {fileID: 0}
@@ -4345,6 +4420,11 @@ PrefabInstance:
         type: 3}
       propertyPath: isWrong
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
+        type: 3}
+      propertyPath: IsCorrect
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
         type: 3}
@@ -5324,6 +5404,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
         type: 3}
+      propertyPath: IsWrong
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
+        type: 3}
       propertyPath: WordOne
       value: 1
       objectReference: {fileID: 0}
@@ -5331,6 +5416,11 @@ PrefabInstance:
         type: 3}
       propertyPath: isWrong
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
+        type: 3}
+      propertyPath: IsCorrect
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
         type: 3}
@@ -6832,6 +6922,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
         type: 3}
+      propertyPath: IsWrong
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
+        type: 3}
       propertyPath: WordOne
       value: 1
       objectReference: {fileID: 0}
@@ -6839,6 +6934,11 @@ PrefabInstance:
         type: 3}
       propertyPath: isWrong
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
+        type: 3}
+      propertyPath: IsCorrect
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
         type: 3}
@@ -7662,6 +7762,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
         type: 3}
+      propertyPath: IsWrong
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
+        type: 3}
       propertyPath: WordOne
       value: 1
       objectReference: {fileID: 0}
@@ -7669,6 +7774,11 @@ PrefabInstance:
         type: 3}
       propertyPath: isWrong
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
+        type: 3}
+      propertyPath: IsCorrect
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1779835639875683690, guid: c86b8fc2dd0075f4688d69e395b09939,
         type: 3}

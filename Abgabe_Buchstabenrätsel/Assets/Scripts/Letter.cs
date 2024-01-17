@@ -25,11 +25,10 @@ public class Letter : MonoBehaviour, IPointerDownHandler
         puzzleManager = GameObject.Find("PuzzleManager").GetComponent<PuzzleManager>();
         letterValue = gameObject.transform.GetChild(0).GetComponent<TMP_Text>();
 
-        // Random Buchstabe verteilen
         InstantiateRandomLetter();
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+    public void OnPointerDown(PointerEventData eventData) // Wenn Objekt gedrückt wurde
     {
         if (CorrectPressed)
         {
@@ -47,7 +46,7 @@ public class Letter : MonoBehaviour, IPointerDownHandler
         }
     }
 
-    public void InstantiateRandomLetter()
+    public void InstantiateRandomLetter() // Random Buchstabe verteilen
     {
         if (isWrong)
         {

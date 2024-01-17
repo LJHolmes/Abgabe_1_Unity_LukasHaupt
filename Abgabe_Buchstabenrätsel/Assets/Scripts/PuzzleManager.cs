@@ -62,10 +62,8 @@ public class PuzzleManager : MonoBehaviour
     {
         soundManager.PlayWrongSound();
 
-        // Alle Werte zurücksetzen
         ResetStats();
 
-        // Nach 0.5f Sekunden Farbe anpassen
         Invoke("ChangeColorDelay", 0.5f);
     }
 
@@ -145,7 +143,7 @@ public class PuzzleManager : MonoBehaviour
         }
     }
 
-    private void ResetStats()
+    private void ResetStats() // Werte zurücksetzen
     {
         corrrectWordsCount = 0;
         correctLetterCountWordOne = 0;
@@ -173,7 +171,7 @@ public class PuzzleManager : MonoBehaviour
         WordsCount.text = corrrectWordsCount.ToString();
     }
 
-    private void FindLettersAndAddToList()
+    private void FindLettersAndAddToList() // Letters in Liste hinzufügen und Wortlänge anpassen
     {
         foreach (GameObject letter in GameObject.FindGameObjectsWithTag("Letters"))
         {
@@ -196,7 +194,7 @@ public class PuzzleManager : MonoBehaviour
         }
     }
 
-    private void ChangeColorDelay()
+    private void ChangeColorDelay() // Farbe wird nach 0.5f Sekunden zurückgesetzt
     {
         foreach (GameObject letter in LetterList)
         {

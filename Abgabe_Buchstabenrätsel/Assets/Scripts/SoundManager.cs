@@ -13,12 +13,17 @@ public class SoundManager : MonoBehaviour
     public Color SoundOn;
     public Color SoundOff;
 
+    private void Start()
+    {
+        SoundButton = GameObject.Find("SoundButton").GetComponent<Button>();
+    }
+
     public void ToggleSound()
     {
         CorrectLetterSound.mute = !CorrectLetterSound.mute;
         WrongSound.mute = !WrongSound.mute;
-
-        SoundButton = GameObject.Find("SoundButton").GetComponent<Button>();
+        CorrectWordSound.mute = !CorrectWordSound.mute;
+        WinSound.mute = !WinSound.mute;
 
         if (CorrectLetterSound.mute)
         {

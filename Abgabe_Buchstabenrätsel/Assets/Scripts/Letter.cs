@@ -9,8 +9,10 @@ public class Letter : MonoBehaviour, IPointerDownHandler
 
     private TMP_Text letterValue;
 
-    public bool isCorrect;
-    public bool isWrong;
+    private Image image;
+
+    public bool IsCorrect;
+    public bool IsWrong;
     public bool WordOne;
     public bool WordTwo;
     public bool WordThree;
@@ -24,6 +26,7 @@ public class Letter : MonoBehaviour, IPointerDownHandler
     {
         puzzleManager = GameObject.Find("PuzzleManager").GetComponent<PuzzleManager>();
         letterValue = gameObject.transform.GetChild(0).GetComponent<TMP_Text>();
+        image = gameObject.GetComponent<Image>();
 
         InstantiateRandomLetter();
     }
@@ -34,21 +37,21 @@ public class Letter : MonoBehaviour, IPointerDownHandler
         {
             return;
         }
-        if (isWrong)
+        if (IsWrong)
         {
-            gameObject.GetComponent<Image>().color = WrongColor;
+            image.color = WrongColor;
             puzzleManager.WrongLetter();
         }
-        if (isCorrect)
+        if (IsCorrect)
         {
-            gameObject.GetComponent<Image>().color = CorrectColor;
+            image.color = CorrectColor;
             puzzleManager.CorrectLetter(gameObject);
         }
     }
 
     public void InstantiateRandomLetter() // Random Buchstabe verteilen
     {
-        if (isWrong)
+        if (IsWrong)
         {
             int randomIndex = Random.Range(0, 26);
 

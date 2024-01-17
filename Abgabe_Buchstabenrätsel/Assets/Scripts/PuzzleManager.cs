@@ -232,7 +232,7 @@ public class PuzzleManager : MonoBehaviour
     {
         foreach (GameObject letter in LetterList)
         {
-            if (letter.GetComponent<Letter>().isWrong)
+            if (letter.GetComponent<Letter>().IsWrong)
             {
                 letter.GetComponent<Letter>().InstantiateRandomLetter();
             }

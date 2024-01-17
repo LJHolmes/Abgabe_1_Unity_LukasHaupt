@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1756,7 +1756,6 @@ MonoBehaviour:
   WinSound: {fileID: 330585551}
   SoundOn: {r: 0.4745098, g: 0.7529412, b: 0.4745098, a: 1}
   SoundOff: {r: 0.75686276, g: 0.5019608, b: 0.4745098, a: 1}
-  SoundButton: {fileID: 1719314907}
 --- !u!82 &330585549
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2188,8 +2187,8 @@ MonoBehaviour:
   elapsedTime: 0
   winTime: 0
   highScore: 1000
-  correctLetterCount: 0
   corrrectWordsCount: 0
+  wordsToFind: 3
   isWon: 0
   LetterList: []
   TimerText: {fileID: 1741137228}
@@ -4644,7 +4643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -6237,7 +6236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}

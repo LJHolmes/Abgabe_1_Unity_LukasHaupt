@@ -3,6 +3,8 @@ using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
+    private Button SoundButton;
+
     public AudioSource CorrectLetterSound;
     public AudioSource WrongSound;
     public AudioSource CorrectWordSound;
@@ -11,12 +13,12 @@ public class SoundManager : MonoBehaviour
     public Color SoundOn;
     public Color SoundOff;
 
-    public Button SoundButton;
-
     public void ToggleSound()
     {
         CorrectLetterSound.mute = !CorrectLetterSound.mute;
         WrongSound.mute = !WrongSound.mute;
+
+        SoundButton = GameObject.Find("SoundButton").GetComponent<Button>();
 
         if (CorrectLetterSound.mute)
         {
